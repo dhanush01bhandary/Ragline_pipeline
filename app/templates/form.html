@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Q&A</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      padding: 30px;
+    }
+    form {
+      background: #ffffff;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .result {
+      background: #e8f5e9;
+      padding: 15px;
+      margin-top: 25px;
+      border-left: 4px solid green;
+    }
+  </style>
+</head>
+<body>
+  <form method="post">
+    <h2>Ask a Question about the PDF</h2>
+    <input type="text" name="question" placeholder="Enter your question here..." required>
+    <button type="submit">Search</button>
+
+    {% if answer %}
+    <div class="result">
+      <strong>Answer:</strong>
+      <p>{{ answer }}</p>
+    </div>
+    {% endif %}
+  </form>
+</body>
+</html>
